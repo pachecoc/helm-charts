@@ -6,20 +6,20 @@ name: dev-example # the name of service
 # labels:
   # app.kubernetes.io/part-of: example-root # repositoryname (-deployment)(+root)
 
-# Annotations notify slack channel about ArgoCD app status and others
+# Annotations as: notify slack channel about ArgoCD app status, sync order and so on
 # annotations:
 #   argocd.argoproj.io/sync-wave: "-1" # Add this if you want this app to be deployed first
 #   notifications.argoproj.io/subscribe.on-health-degraded-with-graceful-period.slack: example-deployment
 #   notifications.argoproj.io/subscribe.on-deployed.slack: example-deployment
 #   notifications.argoproj.io/subscribe.on-sync-out-of-sync.slack: example-deployment
 
-# Leave it if you want to delete your resources once the application is deleted in ArgoCD
-# If not, please uncomment it
+# Leave it if you want to delete your resources once the application
+# is deleted in ArgoCD. If not, please uncomment it
 # finalizers: []
 
 # The application repository and files
 source:
-  repoURL: https://github.com/mytheresa/example-deployment # current repo
+  repoURL: https://github.com/mytheresa/example-deployment # current repo full URL
   targetRevision: HEAD # main or master branch
   path: config/helm/example/chart/v1.0.0 # chart path inside repo and its version
   helm:
