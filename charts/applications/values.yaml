@@ -1,0 +1,58 @@
+# Application Default values
+
+# Required
+# name: cluster-apps
+
+# Only in argocd at the moment
+namespace: argocd
+
+# Labels to identify the owner
+labels: {}
+
+# Anotations
+annotations: {}
+
+# Add thit if you want to delete your resources once the application is deleted in ArgoCD
+finalizers:
+- resources-finalizer.argocd.argoproj.io
+
+# ArgoCD app specs refering to the application folder, charts and destination
+project: cluster-apps # same project for all apps by now
+
+# The application repository and files
+source:
+  # Required
+  # repoURL: https://github.com/pachecoc/infrastructure
+
+  targetRevision: HEAD
+
+  # Required
+  # path: argocd/appsets/
+
+# The namespace destination of the deployment, the server is the same for all, change namespace only
+destination:
+  server: https://kubernetes.default.svc
+  namespace: argocd
+
+# This one is to ignore any tool that downscales deployments automatically
+ignoreDifferences:
+- group: apps
+  kind: Deployment
+  jsonPointers:
+  - /spec/replicas
+
+syncPolicy:
+
+  # This one is to define if your application in ArgoCD will be auto synced or not
+  # once you uncomment this, the app will be auto synced every 2 minutes
+  # automated:
+    # allowEmpty: false
+    # prune: false
+    # selfHeal: true
+
+  # Default one for improve performance
+  syncOptions:
+  - ApplyOutOfSyncOnly=true
+  - PruneLast=true
+
+info: []
