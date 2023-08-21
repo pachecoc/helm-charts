@@ -32,7 +32,9 @@ source:
 # The namespace destination of the deployment, the server is the same for all, change namespace only
 destination:
   server: https://kubernetes.default.svc
-  namespace: argocd
+
+  # Required
+  # namespace: argocd
 
 # This one is to ignore any tool that downscales deployments automatically
 ignoreDifferences:

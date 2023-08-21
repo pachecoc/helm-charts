@@ -1,5 +1,7 @@
 # ArgoCD Application Object
 
+# This one would need to be a list in order to create more than 1 app
+
 {{ with .Values }}
 apiVersion: argoproj.io/v1alpha1
 kind: Application

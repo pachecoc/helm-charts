@@ -28,6 +28,10 @@ source:
       - ../../helm-values-files/dev/values.yaml
       - ../../helm-values-files/dev/values-tag.yaml
 
+# The namespace destination of the deployment
+destination:
+  namespace: dev
+
 # Sync options
 syncPolicy:
 
