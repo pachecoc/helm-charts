@@ -41,3 +41,8 @@ syncPolicy:
   #   allowEmpty: false # allow argocd operation in all resources
   #   prune: false # remove non existing resources in git
   #   selfHeal: true # rollback to the git state
+
+  # Default one for improve performance
+  syncOptions:
+  - ApplyOutOfSyncOnly=true
+  - PruneLast=true
