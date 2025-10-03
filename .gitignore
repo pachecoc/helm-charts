@@ -31,3 +31,9 @@ Desktop.ini
 .idea/
 *.swp
 *.swo
+
+# CI/CD
+publish-helm.sh
+
+# Temporary files
+.github/
