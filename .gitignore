@@ -1,57 +1,37 @@
-# ----------------------
 # Helm build artifacts
-# ----------------------
 **/*.tgz
 **/*.lock
 **/.chartworkspace/
 **/.charts/
 
-# ----------------------
 # Artifact Hub / Repo Index
-# ----------------------
 **/index.yaml
 **/.cache/
 **/tmp/
 
-# Keep Artifact Hub metadata files (any depth)
-!**/artifacthub-repo.yaml
-!**/artifacthub-pkg.yaml
-
-# ----------------------
 # Local environment configs
-# ----------------------
 **/.env
 **/.env.local
 **/*.secrets
 
-# ----------------------
 # Logs
-# ----------------------
 **/*.log
 
-# ----------------------
 # OS junk
-# ----------------------
 **/.DS_Store
 **/Thumbs.db
 **/Desktop.ini
 
-# ----------------------
 # Editor / IDE files
-# ----------------------
 **/.vscode/
 **/.idea/
 **/*.swp
 **/*.swo
 
-# ----------------------
 # CI/CD local scripts
-# ----------------------
 **/publish-helm.sh
 
-# ----------------------
 # Temporary files and folders
-# ----------------------
 **/.github/
 *~
 *.bak
