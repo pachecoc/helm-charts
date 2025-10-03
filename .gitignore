@@ -1,0 +1,33 @@
+# Helm build artifacts
+*.tgz
+*.lock
+.chartworkspace/
+.charts/
+
+# Artifact Hub / Repo Index
+index.yaml
+.cache/
+tmp/
+
+# Keep Artifact Hub metadata files
+!artifacthub-repo.yaml
+!artifacthub-pkg.yaml
+
+# Local environment configs
+.env
+.env.local
+*.secrets
+
+# Logs
+*.log
+
+# OS junk
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Editor / IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
