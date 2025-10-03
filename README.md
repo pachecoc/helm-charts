@@ -42,4 +42,4 @@ helm pull oci://ghcr.io/pachecoc/charts/sqs-admin --version 0.1.0
 # Repository GitHub Page
 
 Helm charts can be fetched from the following URL:
-https://pachecoc.github.io/helm-charts/
+https://github.com/users/pachecoc/packages/container/package/charts%2Fsqs-admin
