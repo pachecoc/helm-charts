@@ -1,11 +1,11 @@
 # Helm build artifacts
-**/*.tgz
+charts/**/**.tgz
 **/*.lock
 **/.chartworkspace/
 **/.charts/
 
 # Artifact Hub / Repo Index
-**/index.yaml
+charts/index.yaml
 **/.cache/
 **/tmp/
 
