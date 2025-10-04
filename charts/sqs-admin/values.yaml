@@ -43,6 +43,11 @@ podAnnotations: {}
 # For more information checkout: https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/
 podLabels: {}
 
+# Env variables to set in the container, for instance to set a custom SQS endpoint URL
+env:
+  - name: SQS_ENDPOINT_URL
+    value: "https://sqs.eu-central-1.amazonaws.com/12346578911/example.fifo"
+
 # Pod security context. More info: https://kubernetes.io/docs/tasks/configure-pod-container/security-context/
 podSecurityContext: {}
   # fsGroup: 2000
