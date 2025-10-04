@@ -45,8 +45,7 @@ podLabels: {}
 
 # Env variables to set in the container, for instance to set a custom SQS endpoint URL
 env:
-  - name: SQS_ENDPOINT
-    value: "https://sqs.eu-central-1.amazonaws.com/12346578911/example.fifo"
+  SQS_ENDPOINT: "https://sqs.eu-central-1.amazonaws.com/12346578911/example.fifo"
 
 # Pod security context. More info: https://kubernetes.io/docs/tasks/configure-pod-container/security-context/
 podSecurityContext: {}
@@ -66,7 +65,7 @@ service:
   # This sets the service type more information can be found here: https://kubernetes.io/docs/concepts/services-networking/service/#publishing-services-service-types
   type: ClusterIP
   # This sets the ports more information can be found here: https://kubernetes.io/docs/concepts/services-networking/service/#field-spec-ports
-  port: 8086
+  port: 3999
 
 # This block is for setting up the ingress for more information can be found here: https://kubernetes.io/docs/concepts/services-networking/ingress/
 ingress:
