@@ -11,35 +11,35 @@ Repository containing Helm charts designed for deployment in cloud, on-premises,
 # Generic example (replace <chart-name> and <version>)
 helm install <release-name> oci://ghcr.io/pachecoc/charts/<chart-name> --version <version>
 
-# Example: install sqs-admin v0.1.0
-helm install sqs-admin oci://ghcr.io/pachecoc/charts/sqs-admin --version 0.1.0
+# Example: install sqs-ui v0.1.0
+helm install sqs-ui oci://ghcr.io/pachecoc/charts/sqs-ui --version 0.1.0
 ```
 
 ### Upgrade a release
 
 ```bash
-helm upgrade sqs-admin oci://ghcr.io/pachecoc/charts/sqs-admin --version 0.2.0 -f my-values.yaml
+helm upgrade sqs-ui oci://ghcr.io/pachecoc/charts/sqs-ui --version 0.2.0 -f my-values.yaml
 ```
 
 ### Show default values
 
 ```bash
-helm show values oci://ghcr.io/pachecoc/charts/sqs-admin --version 0.1.0 > values.yaml
+helm show values oci://ghcr.io/pachecoc/charts/sqs-ui --version 0.1.0 > values.yaml
 ```
 
 ### Render manifests without installing
 
 ```bash
-helm template sqs-admin oci://ghcr.io/pachecoc/charts/sqs-admin --version 0.1.0
+helm template sqs-ui oci://ghcr.io/pachecoc/charts/sqs-ui --version 0.1.0
 ```
 
 ### Pull a chart locally
 
 ```bash
-helm pull oci://ghcr.io/pachecoc/charts/sqs-admin --version 0.1.0
+helm pull oci://ghcr.io/pachecoc/charts/sqs-ui --version 0.1.0
 ```
 
 # Repository GitHub Page
 
 Helm charts can be fetched from the following URL:
-https://github.com/users/pachecoc/packages/container/package/charts%2Fsqs-admin
+https://github.com/users/pachecoc/packages/container/package/charts%2Fsqs-ui

@@ -2,9 +2,9 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: {{ include "sqs-admin.fullname" . }}
+  name: {{ include "sqs-ui.fullname" . }}
   labels:
-    {{- include "sqs-admin.labels" . | nindent 4 }}
+    {{- include "sqs-ui.labels" . | nindent 4 }}
   {{- with .Values.ingress.annotations }}
   annotations:
     {{- toYaml . | nindent 4 }}
@@ -34,7 +34,7 @@ spec:
             {{- end }}
             backend:
               service:
-                name: {{ include "sqs-admin.fullname" $ }}
+                name: {{ include "sqs-ui.fullname" $ }}
                 port:
                   number: {{ $.Values.service.port }}
           {{- end }}

@@ -5,7 +5,7 @@ Check the application URL in:
 {{- end }}
 {{- else }}
 To access the application, run:
-  kubectl --namespace {{ .Release.Namespace }} port-forward svc/{{ include "sqs-admin.fullname" . }} {{ .Values.service.port }}:{{ .Values.service.port }}
+  kubectl --namespace {{ .Release.Namespace }} port-forward svc/{{ include "sqs-ui.fullname" . }} {{ .Values.service.port }}:{{ .Values.service.port }}
 Then open your browser at:
   http://localhost:{{ .Values.service.port }}
 {{- end }}

@@ -2,14 +2,14 @@
 apiVersion: autoscaling/v2
 kind: HorizontalPodAutoscaler
 metadata:
-  name: {{ include "sqs-admin.fullname" . }}
+  name: {{ include "sqs-ui.fullname" . }}
   labels:
-    {{- include "sqs-admin.labels" . | nindent 4 }}
+    {{- include "sqs-ui.labels" . | nindent 4 }}
 spec:
   scaleTargetRef:
     apiVersion: apps/v1
     kind: Deployment
-    name: {{ include "sqs-admin.fullname" . }}
+    name: {{ include "sqs-ui.fullname" . }}
   minReplicas: {{ .Values.autoscaling.minReplicas }}
   maxReplicas: {{ .Values.autoscaling.maxReplicas }}
   metrics:
