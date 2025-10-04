@@ -29,7 +29,7 @@
 **/*.swo
 
 # CI/CD local scripts
-**/publish-helm.sh
+scripts/**
 
 # Temporary files and folders
 **/.github/
