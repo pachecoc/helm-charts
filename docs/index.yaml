@@ -3,12 +3,12 @@ entries:
   sqs-admin:
   - apiVersion: v2
     appVersion: 0.7.0
-    created: "2025-10-04T07:49:54.692664-03:00"
+    created: "2025-10-04T07:54:33.479474-03:00"
     description: A Helm chart for sqs-admin (AWS SQS management UI)
-    digest: 158fa05bf18919879afcfe18b2c2fc3028ce69152f542f463139e55a9d8685e9
+    digest: f653261dde4cd8b4dd9d457b390ae2b769d8e1202e68ff03f270000b870e77cb
     name: sqs-admin
     type: application
     urls:
     - https://pachecoc.github.io/helm-charts/sqs-admin-0.1.0.tgz
     version: 0.1.0
-generated: "2025-10-04T07:49:54.692371-03:00"
+generated: "2025-10-04T07:54:33.479129-03:00"
