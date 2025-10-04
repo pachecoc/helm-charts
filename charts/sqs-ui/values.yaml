@@ -79,7 +79,7 @@ ingress:
 
   # Ingress hostnames and paths, hosts accepts templated values
   hosts:
-    - host: sqs-admin.local
+    - host: sqs-ui.local
 
   tls: []
   #  - secretName: chart-example-tls

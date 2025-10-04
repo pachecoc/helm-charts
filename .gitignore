@@ -18,6 +18,7 @@ charts/index.yaml
 **/*.log
 
 # OS junk
+.DS_Store
 **/.DS_Store
 **/Thumbs.db
 **/Desktop.ini
