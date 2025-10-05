@@ -44,7 +44,7 @@ podAnnotations: {}
 podLabels: {}
 
 # Default log level as info
-log_level: info
+logLevel: info
 
 # Env variables to set in the container, for instance to set a custom SQS endpoint URL
 env:
