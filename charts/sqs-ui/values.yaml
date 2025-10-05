@@ -43,9 +43,13 @@ podAnnotations: {}
 # For more information checkout: https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/
 podLabels: {}
 
+# Default log level as info
+log_level: info
+
 # Env variables to set in the container, for instance to set a custom SQS endpoint URL
 env:
-  QUEUE_NAME: "example"
+  QUEUE_NAME: example
+  # QUEUE_URL: https://example.mytheresa.services
 
 # Pod security context. More info: https://kubernetes.io/docs/tasks/configure-pod-container/security-context/
 podSecurityContext: {}
@@ -101,12 +105,13 @@ resources: {}
 # This is to setup the liveness and readiness probes more information can be found here: https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/
 livenessProbe:
   httpGet:
-    path: /
+    path: /healthz
     port: http
 
+# Readniness Probe
 readinessProbe:
   httpGet:
-    path: /
+    path: /healthz
     port: http
 
 # This section is for setting up autoscaling more information can be found here: https://kubernetes.io/docs/concepts/workloads/autoscaling/
