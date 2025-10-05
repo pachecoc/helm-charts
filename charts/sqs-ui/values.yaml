@@ -17,7 +17,7 @@ image:
   repository: pachecoc/sqs-ui
   # This sets the pull policy for images.
   pullPolicy: IfNotPresent
-  # Overrides the image tag whose default is the chart appVersion.
+  # If empty, defaults to .Chart.AppVersion
   tag: ""
 
 # This is for the secrets for pulling an image from a private repository more information can be found here: https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/
@@ -46,10 +46,12 @@ podLabels: {}
 # Default log level as info
 logLevel: info
 
-# Env variables to set in the container, for instance to set a custom SQS endpoint URL
+# Env variables to set in the container
+# Either QUEUE_NAME or QUEUE_URL is mandatory
+# Use QUEUE_URL in case of a queue being located in another region or account
 env:
   QUEUE_NAME: example
-  # QUEUE_URL: https://example.mytheresa.services
+  # QUEUE_URL: https://sqs.us-east-1.amazonaws.com/123456789012/example
 
 # Pod security context. More info: https://kubernetes.io/docs/tasks/configure-pod-container/security-context/
 podSecurityContext: {}
@@ -84,23 +86,26 @@ ingress:
   # Ingress hostnames and paths, hosts accepts templated values
   hosts:
     - host: sqs-ui.local
+      paths:
+        - path: /
+          pathType: Prefix
 
   tls: []
   #  - secretName: chart-example-tls
   #    hosts:
   #      - chart-example.local
 
+# We usually recommend not to specify default resources and to leave this as a conscious
+# choice for the user. This also increases chances charts run on environments with little
+# resources, such as Minikube. If you do want to specify resources, uncomment the following
+# lines, adjust them as necessary, and remove the curly braces after 'resources:'.
 resources: {}
-  # We usually recommend not to specify default resources and to leave this as a conscious
-  # choice for the user. This also increases chances charts run on environments with little
-  # resources, such as Minikube. If you do want to specify resources, uncomment the following
-  # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
   # limits:
-  #   cpu: 100m
-  #   memory: 128Mi
+  #   cpu: 50m
+  #   memory: 64Mi
   # requests:
-  #   cpu: 100m
-  #   memory: 128Mi
+  #   cpu: 50m
+  #   memory: 64Mi
 
 # This is to setup the liveness and readiness probes more information can be found here: https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/
 livenessProbe:
@@ -118,7 +123,7 @@ readinessProbe:
 autoscaling:
   enabled: false
   minReplicas: 1
-  maxReplicas: 100
+  maxReplicas: 10
   targetCPUUtilizationPercentage: 80
   targetMemoryUtilizationPercentage: 80
 
