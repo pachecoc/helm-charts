@@ -3,12 +3,19 @@ entries:
   sqs-ui:
   - apiVersion: v2
     appVersion: 0.1.0
-    created: "2025-10-05T02:07:17.294535-03:00"
+    created: "2025-10-05T12:51:56.114511-03:00"
     description: A Helm chart for sqs-ui (AWS SQS management UI)
-    digest: ffe4ae3b0be274333a05f75693cfc8cd9e3d9f13a498fdaf4e3fe3419ef7336d
+    digest: f805dd057089898628b4b6d187efcfb79a350dfae11e17e8f54ad1ed0077877f
+    home: https://github.com/pachecoc/sqs-ui
+    maintainers:
+    - name: Gustavo Pacheco
+      url: https://github.com/pachecoc
     name: sqs-ui
+    sources:
+    - https://github.com/pachecoc/sqs-ui
+    - https://github.com/pachecoc/helm-charts
     type: application
     urls:
     - https://pachecoc.github.io/helm-charts/sqs-ui-0.1.0.tgz
     version: 0.1.0
-generated: "2025-10-05T02:07:17.294195-03:00"
+generated: "2025-10-05T12:51:56.114179-03:00"

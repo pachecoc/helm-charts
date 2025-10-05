@@ -1,45 +1,120 @@
-> **This repository is currently under construction.**
+# 🧭 Pacheco Helm Charts
 
-# Helm Charts
+> **Note:** This repository is under active development. Additional charts will be added soon.
 
-Repository containing Helm charts designed for deployment in cloud, on-premises, development, and testing/lab environments.
+This repository provides a collection of Helm charts built for deployment across **cloud**, **on-premises**, and **development/testing** environments.
 
-## Usage Examples
+---
 
-### Install a chart
+## 📦 Charts Available
+
+| Chart                     | Description                            | Latest Version |
+| ------------------------- | -------------------------------------- | -------------- |
+| [`sqs-ui`](charts/sqs-ui) | A Helm chart for AWS SQS Management UI | `0.1.0`        |
+
+---
+
+## 🚀 Adding the Repository
+
+To use these charts, add the repository hosted on **GitHub Pages**:
+
 ```bash
-# Generic example (replace <chart-name> and <version>)
-helm install <release-name> oci://ghcr.io/pachecoc/charts/<chart-name> --version <version>
+helm repo add pacheco https://pachecoc.github.io/helm-charts
+helm repo update
+```
 
-# Example: install sqs-ui v0.1.0
+Check available charts:
+
+```bash
+helm search repo pacheco
+```
+
+---
+
+## 🧩 Installation and Usage
+
+### Install a Chart
+
+```bash
+# Generic example
+helm install <release-name> pacheco/<chart-name> --version <version>
+
+# Example
+helm install sqs-ui pacheco/sqs-ui --version 0.1.0
+```
+
+### Upgrade a Release
+
+```bash
+helm upgrade sqs-ui pacheco/sqs-ui --version 0.2.0 -f my-values.yaml
+```
+
+### View Default Values
+
+```bash
+helm show values pacheco/sqs-ui --version 0.1.0 > values.yaml
+```
+
+### Render Templates Without Installing
+
+```bash
+helm template sqs-ui pacheco/sqs-ui --version 0.1.0
+```
+
+---
+
+## 🐳 OCI Registry (Alternative Option)
+
+Charts are also available through **GitHub Container Registry (GHCR)**:
+
+```bash
+# Download the chart package
+helm pull oci://ghcr.io/pachecoc/charts/sqs-ui --version 0.1.0
+
+# Install directly from OCI
 helm install sqs-ui oci://ghcr.io/pachecoc/charts/sqs-ui --version 0.1.0
 ```
 
-### Upgrade a release
+> 💡 Tip: Both GitHub Pages and GHCR contain identical charts — choose whichever method fits your workflow.
+
+---
+
+## 🧾 Useful Links
+
+- 📘 **Helm Repository:** <https://pachecoc.github.io/helm-charts/>
+- 📦 **OCI Package (GHCR):** <https://github.com/users/pachecoc/packages/container/package/charts%2Fsqs-ui>
+- 🧱 **Source Repository:** <https://github.com/pachecoc/helm-charts>
+
+---
+
+## 🧠 Developer Guide
+
+### Manually Package and Publish Charts
 
 ```bash
-helm upgrade sqs-ui oci://ghcr.io/pachecoc/charts/sqs-ui --version 0.2.0 -f my-values.yaml
+./scripts/publish.sh
+git add docs/
+git commit -m "Publish charts"
+git push
 ```
 
-### Show default values
+This script performs the following:
+- Packages charts located under `charts/`
+- Updates `docs/index.yaml`
+- Creates Git tags and GitHub releases
+- Publishes to GitHub Pages
 
-```bash
-helm show values oci://ghcr.io/pachecoc/charts/sqs-ui --version 0.1.0 > values.yaml
-```
+---
 
-### Render manifests without installing
+## 🤝 Contributing
 
-```bash
-helm template sqs-ui oci://ghcr.io/pachecoc/charts/sqs-ui --version 0.1.0
-```
+Contributions are encouraged!
 
-### Pull a chart locally
+- Submit PRs for improvements or bug fixes.
+- Follow semantic versioning for chart updates (e.g., `0.1.1 → 0.2.0`).
 
-```bash
-helm pull oci://ghcr.io/pachecoc/charts/sqs-ui --version 0.1.0
-```
+---
 
-# Repository GitHub Page
+## 🪪 License
 
-Helm charts can be fetched from the following URL:
-https://github.com/users/pachecoc/packages/container/package/charts%2Fsqs-ui
+[MIT License](LICENSE) © Gustavo Pacheco
